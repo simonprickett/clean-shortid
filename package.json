@@ -11,6 +11,10 @@
     "shortid",
     "badword-filter"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simonprickett/clean-shortid.git"
+  },
   "author": "Simon Prickett <simon@crudworks.org> (http://crudworks.org)",
   "license": "MIT",
   "dependencies": {
