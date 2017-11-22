@@ -1,0 +1,20 @@
+{
+  "name": "clean-shortid",
+  "version": "0.0.1",
+  "description": "Uses shortid to generate short ID values and attempts to make sure they don't contain offensive language.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "id",
+    "shortid",
+    "badword-filter"
+  ],
+  "author": "Simon Prickett <simon@crudworks.org> (http://crudworks.org)",
+  "license": "MIT",
+  "dependencies": {
+    "badwords-list": "^1.0.0",
+    "shortid": "^2.2.8"
+  }
+}
