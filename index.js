@@ -1,16 +1,14 @@
 var shortId = require('shortid');
 var badWordsList = require('badwords-list');
 
-function decode(encodedShortId) {
-	return shortId.decode(encodedShortId);
-}
-
-function isValid(possibleShortId) {
-	return shortId.isValid(possibleShortId);
-}
-
 function seed(seedValue) {
-	shortId.alphabet.seed(seedValue);
+	shortId.seed(seedValue);
+	return module.exports;
+}
+
+function worker(workerId) {
+	shortId.worker(workerId);
+	return module.exports;
 }
 
 function characters(newCharacters) {
@@ -39,10 +37,18 @@ function generate() {
 	return newId;
 };
 
-// There is one other function from shortId to expose here - worker?
+function decode(encodedShortId) {
+	return shortId.decode(encodedShortId);
+}
+
+function isValid(possibleShortId) {
+	return shortId.isValid(possibleShortId);
+}
+
 module.exports = generate;
 module.exports.generate = generate;
 module.exports.seed = seed;
+module.exports.worker = worker;
 module.exports.characters = characters;
 module.exports.decode = decode;
 module.exports.isValid = isValid;
