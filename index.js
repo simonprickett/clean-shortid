@@ -37,10 +37,6 @@ function generate() {
 	return newId;
 };
 
-
-
-// TODO others...
-
 module.exports = generate;
 module.exports.generate = generate;
 module.exports.seed = seed;
