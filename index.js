@@ -19,24 +19,27 @@ function characters(newCharacters) {
 
 function generate() {
 	var newId;
+	var lowerCaseNewId;
 	var n;
-	var acceptable = false;
+	var acceptable;
 
-	while (! acceptable) {
-		acceptable = true;
+	do {
 		newId = shortId.generate();
+		lowerCaseNewId = newId.toLowerCase();
+		acceptable = true;
 
 		for (n = 0; n < badWordsList.array.length; n++) {
-			if (newId.indexOf(badWordsList.array[n]) !== -1) {
+			if (lowerCaseNewId.indexOf(badWordsList.array[n].toLowerCase()) !== -1) {
 				acceptable = false;
 				break;
 			}
 		}
-	}
+	} while (! acceptable);
 
 	return newId;
 };
 
+// There is one other function from shortId to expose here - worker?
 module.exports = generate;
 module.exports.generate = generate;
 module.exports.seed = seed;
